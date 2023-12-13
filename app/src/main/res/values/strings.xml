@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">JetPack Compose</string>
+    <string name="title_activity_state_host">StateHost</string>
+    <string name="title_activity_calculator">Calculator</string>
+</resources>
