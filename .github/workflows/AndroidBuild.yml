@@ -1,0 +1,24 @@
+name: AndroidBuild
+on:
+  pull_request :
+    branches : [ master ]
+  push:
+    branches : [ master ]
+jobs:
+  build:
+    runs-on : ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+
+      - name: Setup Java JDK
+        uses: actions/setup-java@v4.0.0
+
+      - name: Build with Gradle
+        run: ./gradlew build
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.3
+        with:
+          name: JetPackCompose.apk
+          path: app/build/outputs/apk/app-debug.apk
